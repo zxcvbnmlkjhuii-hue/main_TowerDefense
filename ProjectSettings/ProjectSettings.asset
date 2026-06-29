@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 141d29b5f27461e42b01740f59ac001b
+  productGUID: e44ecfa1d33f24041bdd2f508afccf2d
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: TeamTowerDefense
+  productName: Project_TowerDefence
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -847,14 +847,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: TeamTowerDefense
+  metroPackageName: Project_TowerDefence
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: TeamTowerDefense
+  metroApplicationDescription: Project_TowerDefence
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -925,11 +925,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: e7371c12-a691-439e-86da-3d76bd91ec19
+  cloudProjectId: ea37ee88-7f3c-4a84-be54-1ead67e40b82
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: TeamTowerDefense
-  organizationId: rollertwo
+  projectName: Project_TowerDefence
+  organizationId: jinsobak_unity
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
