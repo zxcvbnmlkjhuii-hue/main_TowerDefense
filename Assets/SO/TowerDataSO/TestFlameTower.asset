@@ -21,7 +21,7 @@ MonoBehaviour:
   type: 5
   monsterLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 512
   attackMode: 1
   projectileData: {fileID: 0}
   hitBoxAttackData: {fileID: 11400000, guid: cdf1c43bdf483754f82191a777161750, type: 2}

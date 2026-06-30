@@ -13,9 +13,10 @@ public abstract class BuildingBase : MonoBehaviour, IBuildable, IHasPreview
     private Material validStateMaterial;
     [SerializeField]
     private Material inValidStateMaterial;
-
     [SerializeField]
     private bool isDestructible;
+    [SerializeField]
+    private PoolEffect PlaceVFX;
 
     public bool IsDestructible => isDestructible;
 
@@ -74,7 +75,17 @@ public abstract class BuildingBase : MonoBehaviour, IBuildable, IHasPreview
         return previewPF;
     }
 
-    public virtual void OnPlaced() { }
+    public virtual void OnPlaced() 
+    {
+        if (PlaceVFX == null)
+            return;
+
+        PoolEffect placeEffect = ObjectPoolManager.Instance.Spawn<PoolEffect>
+            (PlaceVFX.gameObject, transform.position, Quaternion.identity, ObjectPoolManager.Instance.GetEffectParent());
+
+        if (placeEffect != null)
+            placeEffect.Play();
+    }
 
     public void SetVisualState(BuildingVisualState newState)
     {
