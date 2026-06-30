@@ -6,7 +6,7 @@ public enum TowerType
     Cannon,
     Laser,
     Support,
-    Slow,
+    Debuff,
     HitBox
 }
 

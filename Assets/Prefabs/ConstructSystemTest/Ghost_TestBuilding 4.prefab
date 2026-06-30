@@ -40,10 +40,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7515969575203030263}
-  - component: {fileID: 4246760559201237255}
-  - component: {fileID: 8680207356780825251}
   m_Layer: 0
-  m_Name: TestStunTower
+  m_Name: Ghost_TestBuilding 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,50 +64,6 @@ Transform:
   - {fileID: 3339879699633357215}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4246760559201237255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7107717812107533692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e427b9c0424f2540b9db38b8033cbb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Tower
-  buildingData: {fileID: 11400000, guid: 53f00096ee994c04da7eb8b742127bcd, type: 2}
-  firePoint: {fileID: 3339879699633357215}
-  projectileData: {fileID: 0}
-  hitBoxAttackData: {fileID: 11400000, guid: d9b0691295123c04cb32769a8b746258, type: 2}
-  monsterLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  rotateBody: {fileID: 7515969575203030263}
-  rotateSpeed: 10
---- !u!136 &8680207356780825251
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7107717812107533692}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.9
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!1001 &8768753227234842144
 PrefabInstance:
   m_ObjectHideFlags: 0
