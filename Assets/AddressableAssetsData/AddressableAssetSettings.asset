@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 
   m_currentHash:
     serializedVersion: 2
-    Hash: f4213fdbbd7b19bc4c7ee77e3a565fab
+    Hash: 5d7d953ec4ec193bbc99f99d38adf216
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -103,8 +103,10 @@ MonoBehaviour:
     - default
     - Projectile
     - HitBox
-    - Effect
+    - Effect_Projectile
     - Tower
+    - Effect_HitBox
+    - Effect
   m_SchemaTemplates: []
   m_GroupTemplateObjects: []
   m_InitializationObjects: []

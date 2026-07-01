@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HitLuncher
   m_EditorClassIdentifier: Assembly-CSharp::EffectData
   effectID: 1002
-  label: HitExplosion
+  label: Effect_Projectile

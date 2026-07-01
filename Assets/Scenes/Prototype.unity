@@ -256,6 +256,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObjectPoolManager
   projectileParent: {fileID: 2117202368}
   effectParent: {fileID: 246296665}
+  projectileDB: {fileID: 11400000, guid: 3c4462417c642af4d9a7889e574a2c69, type: 2}
+  hitBoxDB: {fileID: 11400000, guid: 7bd5e7b9f7293da4bb9abd845e969ffe, type: 2}
+  effectDatabase: {fileID: 11400000, guid: cab9c7b7d3d57864692e990903c9a450, type: 2}
 --- !u!4 &42908341
 Transform:
   m_ObjectHideFlags: 0

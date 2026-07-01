@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HitFlame
   m_EditorClassIdentifier: Assembly-CSharp::EffectData
   effectID: 1003
-  label: HitFlame
+  label: Effect_HitBox

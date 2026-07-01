@@ -15,6 +15,11 @@ public class Projectile : PoolableObject
         this.target = target;
         this.damage = damage;
         this.projectileData = projectileData;
+
+        //Debug.Log(
+        //      $"[Projectile Init] Data={projectileData.name}, " +
+        //      $"HitEffectID={projectileData.hitEffectID}"
+        //);
     }
     #endregion
 
@@ -125,10 +130,22 @@ public class Projectile : PoolableObject
     {
         int effectID = projectileData.hitEffectID;
 
+        //Debug.Log($"[HitEffect] Spawn 요청 ID={effectID}");
+
         if (effectID <= 0)
+        {
+            //Debug.LogError("[HitEffect] effectID가 0 이하");
             return;
+        }
 
         GameObject prefab = ObjectPoolManager.Instance.GetEffect(projectileData.hitEffectID);
+
+
+        if (prefab == null)
+        {
+            //Debug.LogError($"HitEffect 없음 ID : {projectileData.hitEffectID}");
+            return;
+        }
 
 
         PoolEffect effect = ObjectPoolManager.Instance.Spawn<PoolEffect>(
@@ -137,6 +154,8 @@ public class Projectile : PoolableObject
             Quaternion.identity,
             ObjectPoolManager.Instance.GetEffectParent()
         );
+
+        //Debug.Log($"[HitEffect] Spawn 결과 = {(effect == null ? "NULL" : effect.name)}");
 
         if (effect != null)
             effect.Play();

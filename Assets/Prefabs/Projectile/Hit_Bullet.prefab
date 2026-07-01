@@ -9681,7 +9681,7 @@ GameObject:
   - component: {fileID: 1835174905073365004}
   - component: {fileID: -8375954723986167846}
   m_Layer: 0
-  m_Name: Hit_fire
+  m_Name: Hit_Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HitBullet
   m_EditorClassIdentifier: Assembly-CSharp::EffectData
   effectID: 1001
-  label: HitBullet
+  label: Effect_Projectile

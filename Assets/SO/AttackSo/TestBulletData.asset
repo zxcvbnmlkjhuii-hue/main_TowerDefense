@@ -15,7 +15,7 @@ MonoBehaviour:
   label: Projectile
   attackType: 0
   projectileID: 1001
-  hitEffectID: 0
+  hitEffectID: 1001
   projectileSpeed: 30
   explosionRadius: 1
   stun: 0

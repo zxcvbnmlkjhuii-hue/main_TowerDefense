@@ -20,6 +20,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Effect
+    - Effect_HitBox
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 18d2b03dab4102b4fa5cd7aba5a5e404
     m_Address: Assets/Prefabs/Projectile/Projectile_Bullet.prefab
@@ -43,6 +44,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Effect
+    - Effect_Projectile
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f43d546f448decb41af66526a7f44009
     m_Address: Assets/Prefabs/HitBox/Flamethrower.prefab
@@ -55,6 +57,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Effect
+    - Effect_Projectile
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0868d562560c5ec46a2a3435de8e7e62, type: 2}

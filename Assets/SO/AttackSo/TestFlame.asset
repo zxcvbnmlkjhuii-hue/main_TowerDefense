@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HitBoxAttackData
   label: HitBox
   hitBoxID: 1003
-  hitEffectID: 0
+  hitEffectID: 1003
   activeTime: 10
   damageInterval: 1
   boxSize: {x: 1.5, y: 1.5, z: 6}

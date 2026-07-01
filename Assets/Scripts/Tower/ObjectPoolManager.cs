@@ -69,13 +69,14 @@ public class ObjectPoolManager : MonoBehaviour
     {
         foreach (HitBoxData data in hitBoxDB.hitBoxes)
         {
+
             AsyncOperationHandle handle =
                 Addressables.LoadAssetsAsync<GameObject>(
                     data.label,
                     prefab =>
                     {
                         hitBoxTable[data.hitBoxID] = prefab;
-
+                        
                         Debug.Log($"HitBox 등록 : {data.hitBoxID}");
                     });
 
@@ -85,16 +86,21 @@ public class ObjectPoolManager : MonoBehaviour
 
     private IEnumerator LoadEffectAssets()
     {
+
+
         foreach (EffectData data in effectDatabase.effects)
         {
+            Debug.Log($"[Effect] 로드 시도 ID={data.effectID}, Label={data.label}");
             AsyncOperationHandle handle = 
                 Addressables.LoadAssetsAsync<GameObject>(
                 data.label,
                 prefab =>
                 {
                     effectTable[data.effectID] = prefab;
-                    Debug.Log($"Effect 등록 : {data.effectID} / {prefab.name}");
+                    Debug.Log($"Effect 등록 시도 ID={data.effectID}, Label={data.label}, Prefab={prefab.name}");
+                    //Debug.Log($"Effect 등록 : {data.effectID} / {prefab.name}");
                 });
+            
 
             yield return handle;
         }
@@ -108,29 +114,37 @@ public class ObjectPoolManager : MonoBehaviour
 
     public GameObject GetHitBox(int id)
     {
-        Debug.Log($"HitBox 요청 ID : {id}");
+        //Debug.Log($"HitBox 요청 ID : {id}");
 
         if (hitBoxTable.TryGetValue(id, out GameObject prefab))
         {
-            Debug.Log($"HitBox 찾음 : {prefab.name}");
+            //Debug.Log($"HitBox 찾음 : {prefab.name}");
             return prefab;
         }
 
-        Debug.LogError($"HitBox ID 없음 : {id}");
+        //Debug.LogError($"HitBox ID 없음 : {id}");
         return null;
     }
 
     public GameObject GetEffect(int id)
     {
-        effectTable.TryGetValue(id, out GameObject prefab);
-        return prefab;
+        //Debug.Log($"[Effect] 요청 ID={id}");
+
+        if (effectTable.TryGetValue(id, out GameObject prefab))
+        {
+            //Debug.Log($"[Effect] 찾음 {prefab.name}");
+            return prefab;
+        }
+
+       // Debug.LogError($"[Effect] ID 없음 : {id}");
+        return null;
     }
 
     public async Task<GameObject> LoadPrefabAsync(AssetReferenceGameObject reference)
     {
         if (reference == null || !reference.RuntimeKeyIsValid())
         {
-            Debug.Log("Addresable Reference 없음");
+            //Debug.Log("Addresable Reference 없음");
             return null;
         }
 
@@ -147,7 +161,7 @@ public class ObjectPoolManager : MonoBehaviour
 
         if (handle.Status != AsyncOperationStatus.Succeeded)
         {
-            Debug.Log($"Addressable Load 실패 : {key}");
+            //Debug.Log($"Addressable Load 실패 : {key}");
             return null;
         }
 
@@ -182,7 +196,7 @@ public class ObjectPoolManager : MonoBehaviour
 
             if (obj == null)
             {
-                Debug.LogError($"{prefab.name}에 PoolableObject가 없음");
+                //Debug.LogError($"{prefab.name}에 PoolableObject가 없음");
                 Destroy(newObj);
                 return null;
             }
@@ -194,7 +208,7 @@ public class ObjectPoolManager : MonoBehaviour
         obj.transform.SetPositionAndRotation(position, rotation);
         obj.OnSpawned();
 
-        Debug.Log($"[Pool] 실제 타입 : {obj.GetType().Name}, 요청 타입 : {typeof(T).Name}");
+        //Debug.Log($"[Pool] 실제 타입 : {obj.GetType().Name}, 요청 타입 : {typeof(T).Name}");
 
         return obj as T;
     }
