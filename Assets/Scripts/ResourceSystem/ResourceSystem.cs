@@ -12,6 +12,11 @@ public class ResourceSystem : MonoBehaviour, IResourceSystem
 
     private void Start()
     {
+        Init();
+    }
+
+    public void Init()
+    {
         OnResourceChanged?.Invoke(currentResource);
     }
 

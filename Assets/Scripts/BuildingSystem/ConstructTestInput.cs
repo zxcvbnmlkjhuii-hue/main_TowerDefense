@@ -61,17 +61,6 @@ public class ConstructTestInput: MonoBehaviour
         controller.UpdateRayHitInfo(isHit, hit);
     }
 
-    private void HandleTowerSelectInput(InputAction.CallbackContext ctx)
-    {
-
-        if (int.TryParse(ctx.control.name, out int keyNumber))
-        {
-            int slotIndex = keyNumber - 1;
-
-            controller.SelectBuildingByIndex(slotIndex);
-        }
-    }
-
     private bool CheckPointerOnUI()
     {
         // 현재 씬에 EvnetSystem이 없으면 false 반환
@@ -102,5 +91,16 @@ public class ConstructTestInput: MonoBehaviour
     private void HandleSubActionInput()
     {
         controller.CancelCurModeAction();
+    }
+
+    private void HandleTowerSelectInput(InputAction.CallbackContext ctx)
+    {
+
+        if (int.TryParse(ctx.control.name, out int keyNumber))
+        {
+            int slotIndex = keyNumber - 1;
+
+            controller.SelectBuildingFromSlot(slotIndex);
+        }
     }
 }

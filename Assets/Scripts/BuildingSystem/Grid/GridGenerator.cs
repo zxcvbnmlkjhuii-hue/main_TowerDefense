@@ -27,6 +27,11 @@ public class GridGenerator : MonoBehaviour, IGridProvider
 
     private void Start()
     {
+        Init();
+    }
+
+    public void Init()
+    {
         gridData = new GridData();
         GenerateGrid();
     }
