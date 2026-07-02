@@ -1670,7 +1670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5534918c50c67f040889f9c3fd267847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResourceSystem
-  currentResource: 40
+  currentResource: 50
 --- !u!4 &290137807
 Transform:
   m_ObjectHideFlags: 0
@@ -8456,7 +8456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb51c6c17065953498441c583abf4e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterManager
-  useAutoSpawn: 0
+  useAutoSpawn: 1
   monsterPrefab: {fileID: 4253210182481893339, guid: d71c56f2e6af1ba449a0a11217b143a4, type: 3}
   spawnY: 0.1
   separationRadius: 1

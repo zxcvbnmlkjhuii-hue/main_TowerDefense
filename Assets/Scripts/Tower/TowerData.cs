@@ -23,6 +23,7 @@ public class TowerData : BuildingData
     public int damage = 10;
     public float attackRange = 5f;
     public float attackInterval = 1f;
+    public float attackSpeed = 1f;
 
     [Header("Tower Type")]
     public TowerType type = TowerType.Basic;

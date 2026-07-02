@@ -5,6 +5,7 @@ public class Projectile : PoolableObject
 {
     private Transform target;
     private int damage;
+    private float attackSpeed;
     private ProjectileData projectileData;
 
     [SerializeField] private Vector3 rotationOffset;

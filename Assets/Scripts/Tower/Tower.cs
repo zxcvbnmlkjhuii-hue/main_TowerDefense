@@ -75,7 +75,10 @@ public class Tower : BuildingBase
 
         RotateToTarget(target);
 
-        if (attackTimer >= towerData.attackInterval)
+        float finalAttackInterval =
+        towerData.attackInterval / Mathf.Max(0.01f, towerData.attackSpeed);
+
+        if (attackTimer >= finalAttackInterval)
         {
             attackTimer = 0f;
             Attack(target);
@@ -229,7 +232,8 @@ public class Tower : BuildingBase
             target,
             towerData.damage,
             towerData.monsterLayer,
-            towerData.hitBoxAttackData
+            towerData.hitBoxAttackData,
+            towerData.attackSpeed
         );
 
         float timer = 0f;

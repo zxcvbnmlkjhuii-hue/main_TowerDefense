@@ -94,64 +94,64 @@ public class MonsterManager : MonoBehaviour
                 ObjectPoolManager.Instance.Despawn(m);
             }
         }
-    }*/
+    }
 
     // 임시 변경
-    private void Update()
-    {
-        if (useAutoSpawn)
-        {
-            foreach (var path in paths)
-            {
-                path.spawnTimer += Time.deltaTime;
+    //private void Update()
+    //{
+    //    if (useAutoSpawn)
+    //    {
+    //        foreach (var path in paths)
+    //        {
+    //            path.spawnTimer += Time.deltaTime;
 
-                if (path.spawnTimer < path.spawnInterval) continue;
+    //            if (path.spawnTimer < path.spawnInterval) continue;
 
-                path.spawnTimer = 0f;
-                StartCoroutine(SpawnMonsterGroup(path));
-            }
-        }
+    //            path.spawnTimer = 0f;
+    //            StartCoroutine(SpawnMonsterGroup(path));
+    //        }
+    //    }
 
-        foreach (var list in gridBuckets.Values) list.Clear();
+    //    foreach (var list in gridBuckets.Values) list.Clear();
 
-        foreach (var m in activeMonsters)
-        {
-            m.UpdateGridPosition(tileSize);
+    //    foreach (var m in activeMonsters)
+    //    {
+    //        m.UpdateGridPosition(tileSize);
 
-            if (!gridBuckets.ContainsKey(m.CurrentGridPos))
-                gridBuckets[m.CurrentGridPos] = new List<Monster>();
+    //        if (!gridBuckets.ContainsKey(m.CurrentGridPos))
+    //            gridBuckets[m.CurrentGridPos] = new List<Monster>();
 
-            gridBuckets[m.CurrentGridPos].Add(m);
-        }
+    //        gridBuckets[m.CurrentGridPos].Add(m);
+    //    }
 
-        bool shouldUpdateCache = Time.frameCount % 5 == 0;
+    //    bool shouldUpdateCache = Time.frameCount % 5 == 0;
 
-        for (int i = activeMonsters.Count - 1; i >= 0; i--)
-        {
-            Monster m = activeMonsters[i];
-            Vector3 separationForce = CalculateSeparation(m);
+    //    for (int i = activeMonsters.Count - 1; i >= 0; i--)
+    //    {
+    //        Monster m = activeMonsters[i];
+    //        Vector3 separationForce = CalculateSeparation(m);
 
-            if (shouldUpdateCache)
-                m.cachedSpeedMultiplier = CalculateSpeedMultiplier(m);
+    //        if (shouldUpdateCache)
+    //            m.cachedSpeedMultiplier = CalculateSpeedMultiplier(m);
 
-            m.ManualUpdate(
-                Time.deltaTime,
-                separationForce,
-                pathWidth,
-                containmentStrength,
-                m.cachedSpeedMultiplier);
+    //        m.ManualUpdate(
+    //            Time.deltaTime,
+    //            separationForce,
+    //            pathWidth,
+    //            containmentStrength,
+    //            m.cachedSpeedMultiplier);
 
-            if (!m.IsReachedEnd()) continue;
+    //        if (!m.IsReachedEnd()) continue;
 
-            if (m.TryGetComponent(out MonsterRuntimeBridge bridge))
-                bridge.HandleReachedEnd();
+    //        if (m.TryGetComponent(out MonsterRuntimeBridge bridge))
+    //            bridge.HandleReachedEnd();
 
-            m.OnMonsterDie -= HandleMonsterDeath;
-            m.gameObject.SetActive(false);
-            activeMonsters.RemoveAt(i);
-            monsterPool.Enqueue(m);
-        }
-    }
+    //        m.OnMonsterDie -= HandleMonsterDeath;
+    //        m.gameObject.SetActive(false);
+    //        activeMonsters.RemoveAt(i);
+    //        monsterPool.Enqueue(m);
+    //    }
+    //}
 
 
     public int ActiveMonsterCount => activeMonsters.Count;

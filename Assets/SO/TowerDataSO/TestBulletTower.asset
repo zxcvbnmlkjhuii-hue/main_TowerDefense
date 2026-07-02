@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab3044d0d213fbb42bb52c6a2846aa9e, type: 3}
-  m_Name: TestTowerData
+  m_Name: TestBulletTower
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   buildingID: 0
   buildingName: "\uBE44\uBC84"
@@ -25,7 +25,8 @@ MonoBehaviour:
   placeVFX: {fileID: -7969546562051743012, guid: 201eafd12c4c6b34396a2be032e4a7c9, type: 3}
   damage: 10
   attackRange: 10
-  attackInterval: 0.5
+  attackInterval: 1
+  attackSpeed: 2
   type: 0
   monsterLayer:
     serializedVersion: 2
